@@ -35,6 +35,7 @@ from utils import (
     use_task_specific_params,
 )
 
+from datasets import load_dataset
 
 # need the parent dir module
 sys.path.insert(2, str(Path(__file__).resolve().parents[1]))
@@ -734,6 +735,8 @@ def main(args, model=None) -> SummarizationModule:
     Path(args.output_dir).mkdir(exist_ok=True)
     if len(os.listdir(args.output_dir)) > 3 and args.do_train:
         print('Output directory ({}) already exists and is not empty, overwrite to it...'.format(args.output_dir))
+
+    # import pdb;pdb.set_trace()
         
         # raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
     if model is None:

@@ -76,6 +76,7 @@ class OurModelCheckPoint(pl.callbacks.ModelCheckpoint):
     #     filename: Optional[str] = None,):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        # import pdb;pdb.set_trace()
 
     def save_checkpoint(self, trainer, pl_module):
         print('saving checkpoint now')
@@ -729,7 +730,7 @@ def generic_train(
     **extra_train_kwargs
 ):
     pl.seed_everything(args.seed)
-
+    # import pdb;pdb.set_trace()
     # init model
     odir = Path(model.hparams.output_dir)
     odir.mkdir(exist_ok=True)
